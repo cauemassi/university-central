@@ -1,0 +1,24 @@
+.container
+  .jumbotron
+    h1.text-center Central de Universidades
+
+
+  h2 Lista de professores #{@current_university.name}
+  table.table
+    thead.thead-ligh
+      tr
+        th Nome
+        th Descrição
+        th colspan="3"
+    tbody
+      - @teachers.each do |teacher|
+        tr
+          td= teacher.name
+          td= teacher.description
+          td= link_to 'Show', teacher
+          td= link_to 'Edit', edit_teacher_path(teacher)
+          td= link_to 'Destroy', teacher, method: :delete, data: { confirm: 'Are you sure?'}
+  br/
+  = link_to 'Cadastrar nova entidade para ' + @current_university.name, new_university_teacher_path(@current_university)
+  br
+  = link_to 'Voltar', university_path(@current_university), class: "btn btn-primary btn-lg"

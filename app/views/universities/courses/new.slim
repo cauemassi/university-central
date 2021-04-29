@@ -1,0 +1,8 @@
+.container
+  .jumbotron
+    h1.text-center Central de Universidades
+
+  h1 Cadastrar Curso da #{@current_university.name}
+  = render partial: 'form', locals: { course: @course, url: university_courses_path, method: :post }
+  br
+  = link_to 'Back', university_courses_path(@current_university), class: "btn btn-primary btn-lg float-right"

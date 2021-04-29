@@ -1,0 +1,47 @@
+.container
+  .jumbotron
+    h1.text-center Central de Universidades
+  br
+
+  p#notice= notice
+  p
+    strong Nome:
+    = @university.name
+  p
+    strong Sigla:
+    = @university.acronyn
+  p
+    strong Descrição:
+    = @university.description
+  p
+    strong Condição:
+    = @university.condition
+  p
+    strong Estado:
+    = @university.uf
+  p
+    strong Data de Criação:
+    = @university.creation_date
+
+  = link_to 'Editar', edit_university_path(@university), class: "btn btn-primary btn-lg"
+  |   
+  = link_to 'Voltar', universities_path, class: "btn btn-primary btn-lg"
+
+  br
+  br
+
+  = link_to university_courses_path(@university)
+    .btn.btn-primary.btn-lg.ml-2 Cursos
+
+  = link_to university_teachers_path(@university)
+    .btn.btn-primary.btn-lg.pl-6 Professores
+
+  = link_to university_campus_path(@university)
+    .btn.btn-primary.btn-lg.pl-6 Campus
+
+  = link_to university_student_entities_path(@university)
+    .btn.btn-primary.btn-lg.pl-6 Entidades
+
+  = link_to university_alimentations_path(@university)
+    .btn.btn-primary.btn-lg.pl-6 Alimentação
+

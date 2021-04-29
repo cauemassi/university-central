@@ -1,0 +1,11 @@
+.container
+  .jumbotron
+    h1.text-center Central de Universidades
+
+	h1 Editando #{@university.name}
+  = render 'form', university: @university
+
+  br
+    = link_to 'Mostrar', @university, class: "btn btn-primary btn-lg"
+  br
+    = link_to 'Voltar', universities_path, class: "btn btn-primary btn-lg"

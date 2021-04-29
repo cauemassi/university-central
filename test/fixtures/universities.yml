@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  acronyn: MyString
+  type: 
+  description: MyString
+  condition: MyString
+  dependency_name: MyString
+  uf: MyString
+  creation_date: 2021-04-27
+
+two:
+  name: MyString
+  acronyn: MyString
+  type: 
+  description: MyString
+  condition: MyString
+  dependency_name: MyString
+  uf: MyString
+  creation_date: 2021-04-27

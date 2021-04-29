@@ -1,0 +1,24 @@
+.container
+  .jumbotron
+    h1.text-center Central de Universidades
+
+
+  h2 Lista de ambientes de alimentação da #{@current_university.name}
+  table.table
+    thead.thead-ligh
+      tr
+        th Nome
+        th Descrição
+        th colspan="3"
+    tbody
+      - @alimentations.each do |alimentation|
+        tr
+          td= alimentation.name
+          td= alimentation.description
+          td= link_to 'Show', alimentation
+          td= link_to 'Edit', edit_alimentation_path(alimentation)
+          td= link_to 'Destroy', alimentation, method: :delete, data: { confirm: 'Are you sure?'}
+  br/
+  = link_to 'Cadastrar novo ambiente de alimentação', new_university_alimentation_path(@current_university)
+  br
+  = link_to 'Voltar', university_path(@current_university), class: "btn btn-primary btn-lg"

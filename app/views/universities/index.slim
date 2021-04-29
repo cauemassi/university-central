@@ -1,0 +1,32 @@
+.container
+  .jumbotron
+    h1.text-center Central de Universidades
+
+
+  h1 Lista de Universidades
+  table.table
+    thead.thead-ligh
+      tr
+        th Name
+        th Acronyn
+        th Description
+        th Condition
+        th Dependency name
+        th Uf
+        th Creation date
+        th colspan="3"
+    tbody
+      - @universities.each do |university|
+        tr
+          td= university.name
+          td= university.acronyn
+          td= university.description
+          td= university.condition
+          td= university.dependency_name
+          td= university.uf
+          td= university.creation_date
+          td= link_to 'Show', university
+          td= link_to 'Edit', edit_university_path(university)
+          td= link_to 'Destroy', university, method: :delete, data: { confirm: 'Are you sure?'}
+  br/
+  = link_to 'New University', new_university_path

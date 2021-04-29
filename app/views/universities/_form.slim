@@ -1,0 +1,19 @@
+= simple_form_for(university, html: { class: 'form-inline' })  do |f|
+  - if university.errors.any?
+    #error_explanation
+      h2
+        = pluralize(university.errors.count, "error")
+        | prohibited this university from being saved:
+      ul
+        - university.errors.full_messages.each do |message|
+          li= message
+  = f.input :name, label: 'Nome'
+  = f.input :acronyn
+  = f.input :description
+  = f.input :condition
+  = f.input :dependency_name
+  = f.input :uf
+  = f.input :creation_date
+
+  br
+  = f.button :submit, "Salvar", class: "btn btn-primary btn-lg float-right"
